@@ -9,7 +9,9 @@ const fetchData = async (endpoint, method) => {
                 "Content-Type": "application/json",
             },
         });
-        return response.json() || [];
+        const data =  await response.json() ;
+        console.log(data instanceof Array ? data : [])
+        return data instanceof Array ? data : [];
     }
     catch (error) {
         console.log("Error fetching data:", error);
@@ -22,3 +24,7 @@ const fetchData = async (endpoint, method) => {
 export const searchStocks = (query) =>
     fetchData(`${query? `q=${query}` : ""} `, "GET");
 
+
+
+export const getStocks = () =>
+    fetchData("", "GET");

@@ -3,15 +3,16 @@ import React from 'react'
 function Header() {
   return (
     <div className='flex items-center justify-between sticky p-4   shadow rounded-xl border border-gray-200 ' >
-        <div className='flex items-start gap-1  ' >
-            <p className='text-violet-600 size-4 ' >  ✱ </p>
+        <div className='flex items-center gap-3 ' >
+        <img className='size-6'
+             src="/asterisk.png" alt="Asterik" />
             {/* <img src="https://validus.in/assets/images/validus-logo.svg" alt="Validus Logo" /> */}
-            <p> StockPulse </p>
+            <p className='text-lg font-bold' > StockPulse </p>
 
-        </div>
+        </div>  
       
-            <img className=''
-             src="https://img.icons8.com/ios-glyphs/30/000000/appointment-reminders--v1.png" alt="Notification Icon" />
+            <img className='size-8'
+             src="/man.png" alt="Notification Icon" />
         
     </div>
   )

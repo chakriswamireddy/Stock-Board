@@ -10,14 +10,14 @@ import Header from './components/Header'
 
 function App() {
   const [count, setCount] = useState(0)
-
+  
   return (
     <div className='m-6' >
       <Header />
       <Routes>
         <Route path="/" element={<Navigate to={'/dashboard'} />} />
         <Route path="/dashboard" element={<DBPage />} />
-        <Route path="/stock/:id" element={<SingleStock />} />
+        <Route path="/stock/:symbol" element={<SingleStock />} />
 
 
       </Routes>

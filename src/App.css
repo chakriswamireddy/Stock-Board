@@ -3,3 +3,12 @@
 body {
     background: #f5f6f8;
 }
+
+#tv-attr-logo {
+    display: none !important;
+}
+
+.chart-container canvas {
+    border-right: none !important;
+  }
+  

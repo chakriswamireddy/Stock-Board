@@ -1,14 +1,16 @@
 import React from 'react'
 import { TrendingDown } from 'lucide-react';
+import { Link } from 'react-router';
 
-function StockView({ stock }) {
+function StockCard({ stock }) {
 
     const { symbol, name, price, changePercent } = stock;
 
     const isFalling = changePercent < 0;
     
     return (
-        <div className="w-auto min-w-60 h-max bg-white rounded-lg shadow-sm border border-gray-200 p-4">
+        <Link to={`/stock/${stock.symbol}`} >
+        <div className="w-auto cursor-pointer min-w-60 h-max bg-white rounded-lg shadow-sm border border-gray-200 p-4">
 
 
             <div>
@@ -16,7 +18,7 @@ function StockView({ stock }) {
                 <div className="mb-4 flex justify-between items-center  ">
                     <div className='flex  flex-col max-w-40' >
                         <div className="text-xs font-bold text-gray-500 mb-1"> {symbol}  </div>
-                        <div className=" font-bold text-gray-900 mb-1 "> {name} </div>
+                        <div className=" font-bold  text-gray-900 mb-1 "> {name} </div>
 
                     </div>
                     <div className="flex  flex-col  items-end gap-1">
@@ -48,6 +50,7 @@ function StockView({ stock }) {
                 </svg>
             </div>
         </div>
+        </Link>
 
 
 
@@ -55,4 +58,4 @@ function StockView({ stock }) {
     )
 }
 
-export default StockView
+export default StockCard
